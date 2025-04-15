@@ -39,5 +39,63 @@ This Django project provides two core AI-powered features:
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/ai-django-backend.git
-cd ai-django-backend
+git clone https://github.com/gourav-112/darvix.git
+cd darvix
+python -m venv venv
+.\venv\Scripts\activate  # Windows
+# OR
+source venv/bin/activate  # macOS/Linux
+pip install -r requirements.txt
+```
+
+🐳 Run with Docker
+Build & Start
+```bash
+docker-compose up --build
+```
+The server will be running at:
+📍 http://localhost:8000/
+
+📡 API Endpoints
+/api/transcribe/ – Audio Transcription
+Method: POST
+Payload: multipart/form-data
+
+```bash
+curl -X POST -F "audio=@your_audio_file.mp3" http://localhost:8000/api/transcribe/
+```
+
+Response:
+```json
+{
+  "transcription": [
+    {
+      "speaker": "SPEAKER_00",
+      "text": "Hello, how are you?",
+      "start": 0.0,
+      "end": 3.5
+    },
+    ...
+  ]
+}
+```
+
+/api/suggest-titles/ – Blog Title Suggestions
+Method: POST
+Payload: application/json
+```json
+{
+  "content": "Your full blog post content goes here..."
+}
+```
+
+Response:
+```json
+{
+  "titles": [
+    "How AI is Revolutionizing Content Writing",
+    "Smart Tools for Smarter Blogging",
+    "Leveraging NLP to Write Better Titles"
+  ]
+}
+```
