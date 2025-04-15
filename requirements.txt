@@ -1,0 +1,18 @@
+# Django
+Django==5.2
+asgiref==3.8.1
+sqlparse==0.5.3
+tzdata==2025.2
+
+# WhisperX & dependencies
+torch
+torchaudio
+transformers
+whisperx
+
+# Optional (if your code uses them, or for future enhancement)
+numpy
+faster-whisper  # Optional fallback
+
+# Huggingface tokenizers (used by transformers)
+tokenizers
